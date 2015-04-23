@@ -1,0 +1,19 @@
+{
+  "name": "seamless-immutable-mergers",
+  "version": "0.0.1",
+  "description": "A collection of merger functions for seamless-immutable.",
+  "main": "seamless-immutable-mergers.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crudh/seamless-immutable-mergers.git"
+  },
+  "keywords": [
+    "immutable merger"
+  ],
+  "author": "Christian Rudh",
+  "license": "Apache2",
+  "bugs": {
+    "url": "https://github.com/crudh/seamless-immutable-mergers/issues"
+  },
+  "homepage": "https://github.com/crudh/seamless-immutable-mergers"
+}
