@@ -3,6 +3,16 @@
   "version": "0.0.1",
   "description": "A collection of merger functions for seamless-immutable.",
   "main": "seamless-immutable-mergers.js",
+  "dependencies": {
+    "seamless-immutable": "~2.3.2"
+  },
+  "devDependencies": {
+    "chai": "~1.9.2",
+    "mocha": "~2.0.1"
+  },
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha test/*.spec.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/crudh/seamless-immutable-mergers.git"
