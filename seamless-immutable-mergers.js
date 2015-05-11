@@ -1,5 +1,5 @@
 "use strict";
-var immutable = require("immutable");
+var immutable = require("seamless-immutable");
 
 function concatArrayMerger(current, other) {
   if (!(current instanceof Array) || !(other instanceof Array)) return;
@@ -7,11 +7,11 @@ function concatArrayMerger(current, other) {
   return current.concat(other);
 }
 
-function updatingDiffArrayMerger(current, other, config) {
+function updatingArrayMerger(current, other, config) {
   if (!(current instanceof Array) || !(other instanceof Array)) return;
   if (current.length === 0 || other.length === 0) return;
 
-  var identifier = config.diffArrayMergerIdentifier;
+  var identifier = config.mergerObjectIdentifier;
   if (current[0] === null || !(typeof current[0] === "object") || !current[0][identifier]) return;
   if (other[0] === null || !(typeof other[0] === "object") || !other[0][identifier]) return;
 
@@ -37,7 +37,7 @@ function updatingDiffArrayMerger(current, other, config) {
 // Export the library
 var immutableMergers = {
   concatArrayMerger: concatArrayMerger,
-  updatingDiffArrayMerger: updatingDiffArrayMerger
+  updatingArrayMerger: updatingArrayMerger
 };
 
 Object.freeze(immutableMergers);
