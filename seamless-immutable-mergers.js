@@ -7,7 +7,7 @@ function concatArrayMerger(current, other) {
   return current.concat(other);
 }
 
-function updatingArrayMerger(current, other, config) {
+function updatingByIdArrayMerger(current, other, config) {
   if (!(current instanceof Array) || !(other instanceof Array)) return;
   if (current.length === 0 || other.length === 0) return;
 
@@ -24,7 +24,7 @@ function updatingArrayMerger(current, other, config) {
   for (var j = 0; j < other.length; j++) {
     var matchingCurrentIndex = currentMap[other[j][identifier]];
 
-    if (!matchingCurrentIndex) {
+    if (matchingCurrentIndex === undefined) {
       resultList.push(other[j]);
     } else {
       resultList[matchingCurrentIndex] = resultList[matchingCurrentIndex].merge(other[j], config);
@@ -37,7 +37,7 @@ function updatingArrayMerger(current, other, config) {
 // Export the library
 var immutableMergers = {
   concatArrayMerger: concatArrayMerger,
-  updatingArrayMerger: updatingArrayMerger
+  updatingByIdArrayMerger: updatingByIdArrayMerger
 };
 
 Object.freeze(immutableMergers);
