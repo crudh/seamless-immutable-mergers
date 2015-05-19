@@ -142,13 +142,13 @@ describe("UpdatingByIdArrayMerger", function() {
           id: 10,
           items: [
             {
-              id: 100,
-              status: "fail"
-            },
-            {
               id: 101,
               status: "ok",
               content: "media"
+            },
+            {
+              id: 100,
+              status: "fail"
             }
           ]
         }
