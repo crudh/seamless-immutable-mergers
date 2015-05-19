@@ -1,6 +1,6 @@
 seamless-immutable-mergers
 ==========================
-This contains a set of custom mergers for the [seamless-immutable](https://github.com/rtfeldman/seamless-immutable) library. It is mainly a showcase for what can be done with custom mergers, but the mergers are hopefully useful on their own.
+This contains a set of custom mergers for the [seamless-immutable](https://github.com/rtfeldman/seamless-immutable) library. It's mainly a showcase for what can be done with custom mergers, but the mergers are hopefully useful on their own.
 
 ## The merge API
 If you have an immutable object that you want to merge with another object then you do the following in seamless-immutable:
@@ -19,7 +19,7 @@ You can also pass in configuration to the merge process. For example using the d
 var result = immutableObject.merge(otherObject, {deep: true});
 ```
 
-This will recursively merge all properties that are objects and exists in both the source and target instead of replacing.
+This will recursively merge all properties that are objects and exists in both the source and target instead of replacing them.
 
 ### Custom mergers
 You can also pass in a custom merger that overrides the normal merge process. For example:
@@ -43,8 +43,8 @@ If the merge returns undefined then the merge continues like normal. If the merg
 This is a simple merger that instead of replacing an array with another concats them together. Example:
 
 ```javascript
-immutable = require("seamless-immutable");
-mergers = reuqire("seamless-immutable-mergers");
+var immutable = require("seamless-immutable");
+var mergers = reuqire("seamless-immutable-mergers");
 
 var immutableObject = immutable({
   title: "one",
@@ -56,7 +56,7 @@ var otherObject = {
   items: [3, 4]
 };
 
-var result = immutableObject.merge(otherObject, {merger: myCustomMerger});
+var result = immutableObject.merge(otherObject, {merger: mergers.concatArrayMerger});
 ```
 
 The result will be:
@@ -66,5 +66,81 @@ The result will be:
   items: [1, 2, 3, 4]
 }
 ```
+
+### updatingByIdArrayMerger
+This is a merger that operates on arrays that contains objects with specified ids. It tries to merge each object in the target array with the object with the same id from the source array. Example:
+
+```javascript
+var immutable = require("seamless-immutable");
+var mergers = reuqire("seamless-immutable-mergers");
+
+var immutableObject = immutable({
+  array: [
+    {
+      id: 10,
+      status: "ok",
+      content: "text",
+      items: [
+        {
+          id: 100,
+          status: "ok",
+          content: "text"
+        }
+      ]
+    }
+  ]
+});
+
+var otherObject = {
+  array: [
+    {
+      id: 10,
+      items: [
+        {
+          id: 101,
+          status: "ok",
+          content: "media"
+        },
+        {
+          id: 100,
+          status: "fail"
+        }
+      ]
+    }
+  ]
+};
+
+var result = immutableObject.merge(otherObject, {merger: mergers.updatingByIdArrayMerger, mergerObjectIdentifier: "id"});
+```
+
+The result will be:
+```javascript
+{
+  array: [
+    {
+      id: 10,
+      status: "ok",
+      content": "text",
+      items: [
+        {
+          id: 100,
+          status: "fail",
+          content: "text"
+        },
+        {
+          id: 101,
+          status: "ok",
+          content: "media"
+        }
+      ]
+    }
+  ]
+}
+```
+
+This merger requires that `mergerObjectIdentifier` is set in the config with the name of the property that identifies the object.
+It can be used to update and add to arrays using for example push from the server with only the updated data.
+
+This merger will check both arrays and only do anything if both of them has an object with the specified identifier at position 0. It will then assume that the rest of the arrays only contains such objects.
 
 
