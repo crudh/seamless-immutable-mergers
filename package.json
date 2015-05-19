@@ -1,6 +1,6 @@
 {
   "name": "seamless-immutable-mergers",
-  "version": "0.0.1",
+  "version": "2.0.0",
   "description": "A collection of merger functions for seamless-immutable.",
   "main": "seamless-immutable-mergers.js",
   "dependencies": {
