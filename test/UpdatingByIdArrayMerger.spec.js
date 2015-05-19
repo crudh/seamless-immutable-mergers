@@ -105,17 +105,28 @@ describe("UpdatingByIdArrayMerger", function() {
         {
           id: 10,
           status: "fail"
+        },
+        {
+          id: 11,
+          status: "ok",
+          content: "media"
         }
       ]
     };
 
     var result = current.merge(update, config);
-    assert.equal(result.array.length, 1);
+    console.log(JSON.stringify(result));
+    assert.equal(result.array.length, 2);
 
-    var resultObject = result.array[0];
-    assert.equal(resultObject.id, 10);
-    assert.equal(resultObject.status, "fail");
-    assert.equal(resultObject.content, "text");
+    var firstObject = result.array[0];
+    assert.equal(firstObject.id, 10);
+    assert.equal(firstObject.status, "fail");
+    assert.equal(firstObject.content, "text");
+
+    var secondObject = result.array[1];
+    assert.equal(secondObject.id, 11);
+    assert.equal(secondObject.status, "ok");
+    assert.equal(secondObject.content, "media");
   });
 
   it("deeply merges arrays in merged objects", function() {
