@@ -2,6 +2,9 @@ seamless-immutable-mergers
 ==========================
 This contains a set of custom mergers for the [seamless-immutable](https://github.com/rtfeldman/seamless-immutable) library. It's mainly a showcase for what can be done with custom mergers, but the mergers are hopefully useful on their own.
 
+## Installation
+`npm install seamless-immutable-mergers`
+
 ## The merge API
 If you have an immutable object that you want to merge with another object then you do the following in seamless-immutable:
 
