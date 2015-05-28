@@ -101,7 +101,11 @@ var otherObject = {
   ]
 };
 
-var result = immutableObject.merge(otherObject, {merger: mergers.updatingByIdArrayMerger, mergerObjectIdentifier: "id"});
+var mergeConfig = {
+  merger: mergers.updatingByIdArrayMerger,
+  mergerObjectIdentifier: "id"
+};
+var result = immutableObject.merge(otherObject, mergeConfig);
 ```
 
 The result will be:
