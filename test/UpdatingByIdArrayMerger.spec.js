@@ -115,7 +115,6 @@ describe("UpdatingByIdArrayMerger", function() {
     };
 
     var result = current.merge(update, config);
-    console.log(JSON.stringify(result));
     assert.equal(result.array.length, 2);
 
     var firstObject = result.array[0];
