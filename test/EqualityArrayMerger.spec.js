@@ -9,7 +9,7 @@ describe("EqualityArrayMerger", function() {
   };
 
   it("gives the same reference back if the arrays contains the same items", function() {
-    var data = {a: [1, 2]}
+    var data = {a: [1, 2]};
     var data2 = data;
     assert.equal(data, data2);
 
