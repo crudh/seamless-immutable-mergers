@@ -70,6 +70,21 @@ The result will be:
 }
 ```
 
+### equalityArrayMerger
+This is a merger that operates on arrays and compares the contents of the arrays. If both arrays contain the same elements (it checks each element using `===`) it will not replace the current array with the update and thus not flag that as a change. This means that if there are no other changes and the arrays contain the same elements the result of the merge will be the same object as original. Example:
+
+```javascript
+var data = {a: [1, 2]};
+var immutableObject = immutable(data);
+
+var data2 = {a: [1, 2]};
+var result = immutableObject.merge(data2, {merger: mergers.equalityArrayMerger});
+
+result === immutableObject
+// true
+```
+This can be useful for change detection, like in React's `shouldComponentUpdate`.
+
 ### updatingByIdArrayMerger
 This is a merger that operates on arrays that contains objects with specified ids. It tries to merge each object in the target array with the object with the same id from the source array. Example:
 
