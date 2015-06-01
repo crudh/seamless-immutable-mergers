@@ -1,13 +1,13 @@
 {
   "name": "seamless-immutable-mergers",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "A collection of merger functions for seamless-immutable.",
   "main": "seamless-immutable-mergers.js",
   "dependencies": {
-    "seamless-immutable": "~2.3.2"
+    "seamless-immutable": "~2.4.0"
   },
   "browserDependencies": {
-    "seamless-immutable": "~2.3.2"
+    "seamless-immutable": "~2.4.0"
   },
   "devDependencies": {
     "chai": "~1.9.2",
@@ -24,7 +24,7 @@
     "immutable merger"
   ],
   "author": "Christian Rudh",
-  "license": "Apache2",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/crudh/seamless-immutable-mergers/issues"
   },
