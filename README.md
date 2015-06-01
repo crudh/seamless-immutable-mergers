@@ -147,4 +147,9 @@ It can be used to update and add to arrays using for example push from the serve
 This merger will check both arrays and only do anything if both of them has an object with the specified identifier at position 0. It will then assume that the rest of the arrays only contains such objects.
 It can also be used with the `deep` configuration to do this recursively.
 
+## Major and minor releases
+### 2.1.0
+Added new merger: *equalityArrayMerger*.
 
+### 2.0.0
+Initial release.
