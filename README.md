@@ -148,6 +148,9 @@ This merger will check both arrays and only do anything if both of them has an o
 It can also be used with the `deep` configuration to do this recursively.
 
 ## Major and minor releases
+### 2.2.0
+Started using the UMD pattern so the library will be easy to consume as a global or with requirejs (and not only node/browserify).
+
 ### 2.1.0
 Added new merger: *equalityArrayMerger*.
 
