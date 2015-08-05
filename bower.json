@@ -1,0 +1,29 @@
+{
+  "name": "seamless-immutable-mergers",
+  "version": "2.2.0",
+  "description": "A collection of merger functions for seamless-immutable.",
+  "main": "seamless-immutable-mergers.js",
+  "dependencies": {
+    "seamless-immutable": "~2.4.2"
+  },
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "immutable",
+    "merger"
+  ],
+  "authors": [
+    "Christian Rudh <christian@rudh.se>"
+  ],
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/crudh/seamless-immutable-mergers",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test"
+  ]
+}
