@@ -10,6 +10,8 @@ Any of the following:
 
 Make sure that you have *[seamless-immutable](https://github.com/rtfeldman/seamless-immutable)* loaded and in scope before using *seamless-immutable-mergers*.
 
+Note: If you are using *[requirejs](http://requirejs.org/)* or similar then make sure that *[seamless-immutable](https://github.com/rtfeldman/seamless-immutable)* is exported as `seamless-immutable` so *seamless-immutable-mergers* can require the dependency.
+
 ## The merge API of seamless-immutable
 If you have an immutable object that you want to merge with another object then you do the following in *[seamless-immutable](https://github.com/rtfeldman/seamless-immutable)*:
 
