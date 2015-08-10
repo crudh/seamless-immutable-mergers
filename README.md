@@ -154,7 +154,10 @@ It can be used to update and add to arrays using for example push from the serve
 This merger will check both arrays and only do anything if both of them has an object with the specified identifier at position 0. It will then assume that the rest of the arrays only contains such objects.
 It can also be used with the `deep` configuration to do this recursively.
 
-## Major and minor releases
+## Releases
+### 3.0.0
+Updated to *[seamless-immutable](https://github.com/rtfeldman/seamless-immutable)* 3.0.0 and bumped the major version to be in sync.
+
 ### 2.2.0
 Started using the UMD pattern so the library will be easy to consume as a global or with requirejs (and not only node/browserify).
 
