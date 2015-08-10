@@ -1,13 +1,13 @@
 {
   "name": "seamless-immutable-mergers",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "A collection of merger functions for seamless-immutable.",
   "main": "seamless-immutable-mergers.js",
   "dependencies": {
-    "seamless-immutable": "~2.4.2"
+    "seamless-immutable": "~3.0.0"
   },
   "browserDependencies": {
-    "seamless-immutable": "~2.4.2"
+    "seamless-immutable": "~3.0.0"
   },
   "devDependencies": {
     "chai": "~1.9.2",
