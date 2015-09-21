@@ -155,7 +155,7 @@ This merger will check both arrays and only do anything if both of them has an o
 It can also be used with the `deep` configuration to do this recursively.
 
 ## Releases
-### 3.0.1
+### 3.0.2
 Fixed a bug in *updatingByIdArrayMerger* where a merge with an empty array would wipe the content of the current array.
 
 ### 3.0.0
