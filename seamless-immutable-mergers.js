@@ -27,7 +27,8 @@
 
   function updatingByIdArrayMerger(current, other, config) {
     if (!(current instanceof Array) || !(other instanceof Array)) return;
-    if (current.length === 0 || other.length === 0) return;
+    if (current.length === 0) return;
+    if (other.length === 0) return current;
 
     var identifier = config.mergerObjectIdentifier;
     if (current[0] === null || !(typeof current[0] === "object") || !current[0][identifier]) return;

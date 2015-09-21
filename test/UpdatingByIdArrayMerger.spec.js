@@ -184,4 +184,65 @@ describe("UpdatingByIdArrayMerger", function() {
     assert.equal(items[1].status, "ok");
     assert.equal(items[1].content, "media");
   });
+
+  it("doesn't empty an array when the push contains an empty array", function() {
+    var current = immutable({
+      array: [
+        {
+          id: 10,
+          status: "ok",
+          content: "text",
+          items: [
+            {
+              id: 100,
+              status: "ok",
+              content: "text"
+            }
+          ]
+        }
+      ]
+    });
+
+    var update = {
+      array: []
+    };
+
+    var result = current.merge(update, config);
+    assert.equal(result.array.length, 1);
+  });
+
+  it("doesn't deeply empty an array when the push contains an empty array", function() {
+    var current = immutable({
+      array: [
+        {
+          id: 10,
+          status: "ok",
+          content: "text",
+          items: [
+            {
+              id: 100,
+              status: "ok",
+              content: "text"
+            }
+          ]
+        }
+      ]
+    });
+
+    var update = {
+      array: [
+        {
+          id: 10,
+          items: []
+        }
+      ]
+    };
+
+    var result = current.merge(update, config);
+    assert.equal(result.array.length, 1);
+
+    var resultObject = result.array[0];
+    var items = resultObject.items;
+    assert.equal(items.length, 1);
+  });
 });
