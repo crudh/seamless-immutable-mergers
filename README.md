@@ -92,6 +92,36 @@ result === immutableObject
 ```
 This can be useful for change detection, like in React's `shouldComponentUpdate`.
 
+
+### ignoreArrayMerger
+This is a simple merger that instead of replacing an array with another keeps the original one. Example:
+
+```javascript
+var immutable = require("seamless-immutable");
+var mergers = reuqire("seamless-immutable-mergers");
+
+var immutableObject = immutable({
+  title: "one",
+  items: [1, 2]
+});
+
+var otherObject = {
+  title: "two",
+  items: [3, 4]
+};
+
+var result = immutableObject.merge(otherObject, {merger: mergers.ignoreArrayMerger});
+```
+
+The result will be:
+```javascript
+{
+  title: "two",
+  items: [1, 2]
+}
+```
+
+
 ### updatingByIdArrayMerger
 This is a merger that operates on arrays that contains objects with specified ids. It tries to merge each object in the target array with the object with the same id from the source array. Example:
 
@@ -155,6 +185,9 @@ This merger will check both arrays and only do anything if both of them has an o
 It can also be used with the `deep` configuration to do this recursively.
 
 ## Releases
+### 4.0.0
+Added *ignoreArrayMerger*, updated to *[seamless-immutable](https://github.com/rtfeldman/seamless-immutable)* 4.0.2 and bumped the major version to be in sync.
+
 ### 3.0.2
 Fixed a bug in *updatingByIdArrayMerger* where a merge with an empty array would wipe the content of the current array.
 
