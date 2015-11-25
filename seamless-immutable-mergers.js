@@ -25,6 +25,12 @@
     return current;
   }
 
+  function ignoreArrayMerger(current, other) {
+    if (!(current instanceof Array) || !(other instanceof Array)) return;
+
+    return current;
+  }
+
   function updatingByIdArrayMerger(current, other, config) {
     if (!(current instanceof Array) || !(other instanceof Array)) return;
     if (current.length === 0) return;
@@ -56,8 +62,9 @@
   // Export the library
   var immutableMergers = {
     concatArrayMerger: concatArrayMerger,
-    updatingByIdArrayMerger: updatingByIdArrayMerger,
-    equalityArrayMerger: equalityArrayMerger
+    equalityArrayMerger: equalityArrayMerger,
+    ignoreArrayMerger: ignoreArrayMerger,
+    updatingByIdArrayMerger: updatingByIdArrayMerger
   };
 
   Object.freeze(immutableMergers);
