@@ -4,7 +4,7 @@
   "description": "A collection of merger functions for seamless-immutable.",
   "main": "seamless-immutable-mergers.js",
   "dependencies": {
-    "seamless-immutable": "~4.0.2"
+    "seamless-immutable": "~4.1.1"
   },
   "devDependencies": {
     "chai": "~1.9.2",
