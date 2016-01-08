@@ -48,7 +48,7 @@ function myCustomMerger(current, other, config) {
 }
 ```
 
-If the merge returns undefined then the merge continues like normal. If the merger returns something than that result is used instead. So checks can be added so a custom merger only operates on specific input, like arrays.
+If the merge returns `undefined` then the merge continues like normal. If the merger returns something else then that result is used instead. So checks can be added so a custom merger only operates on specific input, like arrays.
 
 ## Supplied mergers
 ### concatArrayMerger
