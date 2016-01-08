@@ -2,6 +2,8 @@ seamless-immutable-mergers
 ==========================
 This contains a set of custom mergers for the [seamless-immutable](https://github.com/rtfeldman/seamless-immutable) library. It's mainly a showcase for what can be done with custom mergers, but the mergers are hopefully useful on their own.
 
+[![Build Status](https://travis-ci.org/crudh/seamless-immutable-mergers.svg?branch=master)](https://travis-ci.org/crudh/seamless-immutable-mergers)
+
 ## Installation
 Any of the following:
  * `npm install seamless-immutable-mergers`
