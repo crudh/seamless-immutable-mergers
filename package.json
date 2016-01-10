@@ -1,14 +1,14 @@
 {
   "name": "seamless-immutable-mergers",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "A collection of merger functions for seamless-immutable.",
   "main": "seamless-immutable-mergers.js",
   "dependencies": {
-    "seamless-immutable": "~4.1.1"
+    "seamless-immutable": "~5.0.0"
   },
   "devDependencies": {
-    "chai": "~1.9.2",
-    "mocha": "~2.0.1"
+    "chai": "~3.4.0",
+    "mocha": "~2.3.0"
   },
   "scripts": {
     "test": "node_modules/mocha/bin/mocha test/*.spec.js"
