@@ -18,7 +18,9 @@
     "url": "https://github.com/crudh/seamless-immutable-mergers.git"
   },
   "keywords": [
-    "immutable merger"
+    "seamless",
+    "immutable",
+    "merger"
   ],
   "author": "Christian Rudh <christian@rudh.se>",
   "license": "Apache-2.0",
