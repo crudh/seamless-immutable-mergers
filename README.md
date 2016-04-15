@@ -187,6 +187,9 @@ This merger will check both arrays and only do anything if both of them has an o
 It can also be used with the `deep` configuration to do this recursively.
 
 ## Releases
+### 6.0.0
+Updated to *[seamless-immutable](https://github.com/rtfeldman/seamless-immutable)* 6.0.0 and bumped the major version to be in sync.
+
 ### 5.0.1
 Updated to *[seamless-immutable](https://github.com/rtfeldman/seamless-immutable)* 5.2.0.
 
