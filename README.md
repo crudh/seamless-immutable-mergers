@@ -184,7 +184,15 @@ This merger requires that `mergerObjectIdentifier` is set in the config with the
 It can be used to update and add to arrays using for example push from the server with only the updated data.
 
 This merger will check both arrays and only do anything if both of them has an object with the specified identifier at position 0. It will then assume that the rest of the arrays only contains such objects.
-It can also be used with the `deep` configuration to do this recursively.
+
+It can also be used with the following options:
+
+##### `deep?: boolean`
+
+Default is `false`. Control whether the merger should or not to do this recursively.
+
+##### `modifier?: 'push' | 'unshift'`
+Default is `push`. Manages the way the new data is added to the array (first or last position - respectivaly).
 
 ## Releases
 ### 7.0.0
