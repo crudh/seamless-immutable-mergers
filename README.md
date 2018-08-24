@@ -192,7 +192,7 @@ It can also be used with the following options:
 Default is `false`. Control whether the merger should or not to do this recursively.
 
 ##### `modifier?: 'push' | 'unshift'`
-Default is `push`. Manages the way the new data is added to the array (first or last position - respectivaly).
+Default is `push`. Manages the way the new data is added to the array (first or last position - respectively).
 
 ## Releases
 ### 7.0.0
