@@ -52,7 +52,7 @@
       if (matchingCurrentIndex === undefined) {
         var modifier = config.modifier;
         if (modifier !== 'push' && modifier !== 'unshift')
-          modifier = 'push'
+          modifier = 'push';
         resultList[modifier](other[j]);
       } else {
         resultList[matchingCurrentIndex] = resultList[matchingCurrentIndex].merge(other[j], config);
