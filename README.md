@@ -195,6 +195,9 @@ Default is `false`. Control whether the merger should or not to do this recursiv
 Default is `push`. Manages the way the new data is added to the array (first or last position - respectivaly).
 
 ## Releases
+### 7.1.0
+*updatingByIdArrayMerger* received a config option for how new items are added to the array (thanks to @daviscabral)
+
 ### 7.0.0
 Updated to *[seamless-immutable](https://github.com/rtfeldman/seamless-immutable)* 7.0.0 and bumped the major version to be in sync.
 
