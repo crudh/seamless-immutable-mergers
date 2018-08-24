@@ -50,7 +50,10 @@
       var matchingCurrentIndex = currentMap[other[j][identifier]];
 
       if (matchingCurrentIndex === undefined) {
-        resultList.push(other[j]);
+        var modifier = config.modifier;
+        if (modifier !== 'push' && modifier !== 'unshift')
+          modifier = 'push'
+        resultList[modifier](other[j]);
       } else {
         resultList[matchingCurrentIndex] = resultList[matchingCurrentIndex].merge(other[j], config);
       }

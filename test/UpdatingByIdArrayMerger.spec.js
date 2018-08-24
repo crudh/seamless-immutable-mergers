@@ -245,4 +245,94 @@ describe("UpdatingByIdArrayMerger", function() {
     var items = resultObject.items;
     assert.equal(items.length, 1);
   });
+
+  it("adds new items to the end when no modifier is provided", function() {
+    var current = immutable({
+      array: [
+        {
+          id: '6a230f52-a757-11e8-8ed2-3c15c2de1bfa',
+          name: 'Categories'
+        },
+        {
+          id: '73c3d1a4-a757-11e8-9634-3c15c2de1bfa',
+          name: 'Tags'
+        }
+      ]
+    });
+
+    var update = {
+      array: [
+        {
+          id: 'a9e79932-a757-11e8-b3e7-3c15c2de1bfa',
+          name: 'Posts'
+        }
+      ]
+    };
+
+    var result = current.merge(update, config);
+
+    assert.equal(result.array[0].id, '6a230f52-a757-11e8-8ed2-3c15c2de1bfa');
+    assert.equal(result.array[1].id, '73c3d1a4-a757-11e8-9634-3c15c2de1bfa');
+    assert.equal(result.array[2].id, 'a9e79932-a757-11e8-b3e7-3c15c2de1bfa');
+  });
+
+  it("adds new items to the beginning when unshift modifier is provided", function() {
+    var current = immutable({
+      array: [
+        {
+          id: '6a230f52-a757-11e8-8ed2-3c15c2de1bfa',
+          name: 'Categories'
+        },
+        {
+          id: '73c3d1a4-a757-11e8-9634-3c15c2de1bfa',
+          name: 'Tags'
+        }
+      ]
+    });
+
+    var update = {
+      array: [
+        {
+          id: 'a9e79932-a757-11e8-b3e7-3c15c2de1bfa',
+          name: 'Posts'
+        }
+      ]
+    };
+
+    var result = current.merge(update, Object.assign({ modifier: 'unshift' }, config));
+
+    assert.equal(result.array[0].id, 'a9e79932-a757-11e8-b3e7-3c15c2de1bfa');
+    assert.equal(result.array[1].id, '6a230f52-a757-11e8-8ed2-3c15c2de1bfa');
+    assert.equal(result.array[2].id, '73c3d1a4-a757-11e8-9634-3c15c2de1bfa');
+  });
+
+  it("adds new items to the end when an invalid modifier is provided", function() {
+    var current = immutable({
+      array: [
+        {
+          id: '6a230f52-a757-11e8-8ed2-3c15c2de1bfa',
+          name: 'Categories'
+        },
+        {
+          id: '73c3d1a4-a757-11e8-9634-3c15c2de1bfa',
+          name: 'Tags'
+        }
+      ]
+    });
+
+    var update = {
+      array: [
+        {
+          id: 'a9e79932-a757-11e8-b3e7-3c15c2de1bfa',
+          name: 'Posts'
+        }
+      ]
+    };
+
+    var result = current.merge(update, Object.assign({ modifier: 'invalid' }, config));
+
+    assert.equal(result.array[0].id, '6a230f52-a757-11e8-8ed2-3c15c2de1bfa');
+    assert.equal(result.array[1].id, '73c3d1a4-a757-11e8-9634-3c15c2de1bfa');
+    assert.equal(result.array[2].id, 'a9e79932-a757-11e8-b3e7-3c15c2de1bfa');
+  });
 });
